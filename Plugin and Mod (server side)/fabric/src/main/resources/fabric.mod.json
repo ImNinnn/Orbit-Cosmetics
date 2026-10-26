@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"id": "orbit_cosmetic_server",
+	"version": "${version}",
+	"name": "Orbit Cosmetic Server",
+	"description": "Server companion for Orbit Cosmetic: shares players' Blockbench cosmetics between Orbit clients, with permissions, limits and moderation. Players without the client mod can still join and play normally.",
+	"icon": "assets/orbit_cosmetic_server/icon.png",
+	"environment": "server",
+	"entrypoints": {
+		"server": [
+			"dev.orbit.cosmetic.server.fabric.OrbitServerMod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

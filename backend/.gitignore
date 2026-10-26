@@ -1,0 +1,13 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local development data (database and uploaded cosmetics)
+data/
+storage/cosmetics/*
+!storage/cosmetics/.gitkeep
+
+# Secrets (Discord bot token, webhook URL)
+.env

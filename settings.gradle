@@ -1,0 +1,28 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
+
+plugins {
+	id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'orbit-cosmetic'
+
+// Platform-independent code shared by the client mod, the Fabric server mod and the Paper plugin.
+include 'common'
+
+include 'client'
+project(':client').projectDir = file('Mod (client side)')
+
+include 'server-fabric'
+project(':server-fabric').projectDir = file('Plugin and Mod (server side)/fabric')
+
+include 'server-paper'
+project(':server-paper').projectDir = file('Plugin and Mod (server side)/paper')

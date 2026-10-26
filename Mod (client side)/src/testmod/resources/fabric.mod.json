@@ -1,0 +1,13 @@
+{
+	"schemaVersion": 1,
+	"id": "orbit_cosmetic_testharness",
+	"version": "0.0.0",
+	"name": "Orbit Cosmetic test harness (development only)",
+	"environment": "client",
+	"entrypoints": {
+		"client": ["dev.orbit.cosmetic.testharness.OrbitTestHarness"]
+	},
+	"depends": {
+		"orbit_cosmetic": "*"
+	}
+}

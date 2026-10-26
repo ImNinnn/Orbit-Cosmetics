@@ -1,0 +1,11 @@
+# Runtime
+fastapi==0.162.0
+uvicorn==0.54.0
+python-multipart==0.0.32
+
+# Testing
+pytest==9.1.1
+httpx2==2.16.0
+
+# Discord moderation bot (secret token lives in backend/.env)
+discord.py==2.7.1

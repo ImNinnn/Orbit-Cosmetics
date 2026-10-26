@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "orbit_cosmetic",
+	"version": "${version}",
+	"name": "Orbit Cosmetic",
+	"description": "Wear your own Blockbench cosmetics. Drop .bbmodel files into the orbit folder, load them in the Cosmetic Manager (default key: O) and share them with other Orbit players on servers running the Orbit Cosmetic server mod or plugin.",
+	"icon": "assets/orbit_cosmetic/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"dev.orbit.cosmetic.client.OrbitClient"
+		]
+	},
+	"mixins": [
+		"orbit_cosmetic.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"entity_model_features": "*"
+	}
+}

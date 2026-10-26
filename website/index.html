@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Orbit Cosmetic – Blockbench cosmetics for Minecraft</title>
+	<meta name="description" content="Wear your own Blockbench cosmetics in Minecraft Java 26.3: animated, physics-driven, and shared with other players. Fabric mod with a Fabric server mod and Paper plugin.">
+	<meta name="theme-color" content="#141416">
+	<link rel="canonical" href="https://orbitcosmetics.qd.je/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Orbit Cosmetic">
+	<meta property="og:description" content="Wear your own Blockbench cosmetics in Minecraft: animated, physics-driven, and shared with other players.">
+	<meta property="og:url" content="https://orbitcosmetics.qd.je/">
+	<meta property="og:image" content="https://orbitcosmetics.qd.je/assets/img/social.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+	<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="wrap">
+			<a class="logo" href="./"><span class="dot" aria-hidden="true"></span>Orbit</a>
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+			<nav class="nav" id="nav">
+				<a href="#features">Features</a>
+				<a href="#start">Get started</a>
+				<a href="#servers">Servers</a>
+				<a href="#safety">Safety</a>
+				<a href="guide.html">Creator guide</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics">GitHub</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="wrap">
+				<div>
+					<p class="eyebrow">Minecraft Java 26.3 · Fabric</p>
+					<h1>Your models.<br>On your <span class="accent">player</span>.</h1>
+					<p class="lead">Orbit Cosmetic puts your own Blockbench models on your Minecraft player: hats, wings, backpacks, tails. They animate, react to how you move, and other Orbit players see them too.</p>
+					<div class="button-row">
+						<a class="button" href="https://github.com/ImNinnn/Orbit-Cosmetics/releases">Download</a>
+						<a class="button secondary" href="guide.html">Make a cosmetic</a>
+					</div>
+					<p class="meta">Free · Source on GitHub · No resource packs · No restarts</p>
+				</div>
+				<img class="shot" src="assets/img/hero.webp" width="960" height="540" alt="A Minecraft player wearing a top hat, coloured gloves and boots made in Blockbench, with the Orbit dot before their name.">
+			</div>
+		</section>
+
+		<section id="features" class="band">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Everything a cosmetic needs</h2>
+					<p>Drop a <code>.bbmodel</code> file in a folder, load it, and wear it. Orbit handles the rest.</p>
+				</div>
+				<div class="features">
+					<div class="card">
+						<h3>Straight from Blockbench</h3>
+						<p>Use <code>.bbmodel</code> files as they are. Textures are embedded, nothing is converted, and changes show up after one click on Reload.</p>
+					</div>
+					<div class="card">
+						<h3>Follows your body</h3>
+						<p>Attach parts to the head, body, arms or legs. They move with your real animated body, including Fresh Animations and other Entity Model Features packs.</p>
+					</div>
+					<div class="card">
+						<h3>Animations</h3>
+						<p>Play animations when you idle, walk, sprint, jump, fall, sneak, swim or fly, all the time, or at random moments that every player sees at once.</p>
+					</div>
+					<div class="card">
+						<h3>Movement physics</h3>
+						<p>Capes lift when you run, tails swing when you turn, backpacks bounce. Choose a part, what moves it, how far and how smoothly.</p>
+					</div>
+					<div class="card">
+						<h3>Shared with everyone</h3>
+						<p>Other Orbit players see your cosmetics on servers running the Orbit server mod or plugin, and on any other server through Orbit Cloud.</p>
+					</div>
+					<div class="card">
+						<h3>Featured catalog</h3>
+						<p>Browse cosmetics checked by hand by the Orbit team and add them to your collection from inside the game.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="wrap">
+				<div class="split">
+					<img class="shot" src="assets/img/manager.webp" width="960" height="540" loading="lazy" alt="The Orbit Cosmetic Manager: a list of cosmetics with their status, and a live preview of the player.">
+					<div>
+						<h3>One screen for your collection</h3>
+						<p>Press <kbd>O</kbd> to open the Cosmetic Manager. Drag models onto the window, load several at once, preview them on your player and see right away if something is wrong with a file.</p>
+						<ul>
+							<li><strong>Create</strong> writes a ready-made Blockbench template with every body part.</li>
+							<li>Each cosmetic keeps its settings in a small <code>.json</code> next to it, so you can share it exactly as you set it up.</li>
+							<li>Hide anyone's cosmetics for yourself from the <strong>Players</strong> menu.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="split flip">
+					<div class="stack">
+						<img class="shot" src="assets/img/animations.webp" width="960" height="244" loading="lazy" alt="Animation settings: a walk animation set to play while walking, and a random animation with a wait of one to two seconds.">
+						<img class="shot" src="assets/img/physics.webp" width="960" height="320" loading="lazy" alt="Physics settings for a part: rotation Z moves with forward speed, strength 8, maximum 40 degrees, resistance 0.6.">
+					</div>
+					<div>
+						<h3>Animations and physics, without code</h3>
+						<p>Every animation in your model gets a trigger, a loop mode, a speed and a priority. Animations named <code>WALK</code>, <code>IDLE</code>, <code>JUMP</code> and so on are set up for you.</p>
+						<p>The <strong>Advanced</strong> screen adds movement physics to any part: pick it from the part tree, then choose what moves it (forward, sideways, up and down, speed or turning), how strongly, how far, and how smoothly it settles.</p>
+					</div>
+				</div>
+				<div class="split">
+					<img class="shot" src="assets/img/physics-running.webp" width="960" height="540" loading="lazy" alt="A player running away from the camera; their backpack tilts with the movement.">
+					<div>
+						<h3>Everyone sees the same thing</h3>
+						<p>Your animation and physics settings travel with your cosmetic. Other players' games run the same animations locally, so it looks smooth even on busy servers, and random animations start at the same moment for everyone.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="start" class="band">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Get started</h2>
+					<p>You need Minecraft Java Edition 26.3 with Fabric.</p>
+				</div>
+				<ol class="steps">
+					<li><strong>Install Fabric</strong>Install Fabric Loader 0.20.1 or newer and put Fabric API in your <code>mods</code> folder.</li>
+					<li><strong>Add Orbit</strong>Download the Orbit Cosmetic mod and put it in the same <code>mods</code> folder.</li>
+					<li><strong>Add models</strong>Start the game once. Drop <code>.bbmodel</code> files into the new <code>orbit</code> folder in your game folder.</li>
+					<li><strong>Wear them</strong>Press <kbd>O</kbd>, select a cosmetic and click <strong>Load</strong>. That's it.</li>
+				</ol>
+				<div class="note"><strong>No models yet?</strong> Click <strong>Create</strong> in the manager for a template, follow the <a href="guide.html">creator guide</a>, or open <strong>Catalog</strong> to get featured cosmetics.</div>
+			</div>
+		</section>
+
+		<section id="servers">
+			<div class="wrap">
+				<div class="split flip">
+					<img class="shot" src="assets/img/catalog.webp" width="960" height="478" loading="lazy" alt="The Featured Catalog in game, with a sample hat that is checked and safe to use, and a notification that it was downloaded.">
+					<div>
+						<h3>Works on any server</h3>
+						<p>Players without Orbit join and play as usual; nothing changes for them. Orbit players see each other's cosmetics in one of two ways:</p>
+						<ul>
+							<li><strong>Servers with Orbit:</strong> the Fabric server mod or Paper plugin shares cosmetics directly and gives the server full control.</li>
+							<li><strong>Any other server:</strong> Orbit Cloud shares them instead. You sign in with your Minecraft account, verified by Mojang, the same way joining a server works. Your login never reaches Orbit.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="split">
+					<div class="table-wrap">
+						<table>
+							<thead><tr><th>Command</th><th>What it does</th></tr></thead>
+							<tbody>
+								<tr><td><code>/orbit enable</code> / <code>disable</code></td><td>Turn Orbit on or off for everyone</td></tr>
+								<tr><td><code>/orbit block &lt;player&gt;</code></td><td>Stop a player wearing cosmetics</td></tr>
+								<tr><td><code>/orbit ban &lt;hash&gt;</code></td><td>Forbid a cosmetic on the server</td></tr>
+								<tr><td><code>/orbit set requireApproval on</code></td><td>Only show cosmetics you approved</td></tr>
+								<tr><td><code>/orbit set maxEquipped 3</code></td><td>Limit cosmetics per player</td></tr>
+								<tr><td><code>/orbit players</code></td><td>Who wears what</td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div>
+						<h3>For server owners</h3>
+						<p>Install the Orbit server mod (Fabric) or plugin (Paper) and you decide what is allowed: uploads, downloads, animations, nameplate icons, body parts, size limits and approval of each cosmetic. Settings live in <code>orbit-server.json</code> and apply instantly.</p>
+						<p>Permissions work with LuckPerms and other permission plugins: <code>orbit.use</code> and <code>orbit.admin</code> on Paper, <code>orbit_cosmetic.use</code> and <code>orbit_cosmetic.admin</code> on Fabric.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="safety" class="band">
+			<div class="wrap">
+				<div class="split">
+					<div>
+						<h3>Safe by design</h3>
+						<ul>
+							<li><strong>Models are data, never code.</strong> Files are checked before use, with strict limits on size, parts, textures and animations. Nothing inside a model is ever run.</li>
+							<li><strong>Every download is verified.</strong> Cosmetics are identified by a fingerprint of their contents, so nobody can swap one for another.</li>
+							<li><strong>Reports reach real people.</strong> Report a player from the <strong>Players</strong> menu. Players reported by several people are reviewed by moderators and can be banned from Orbit Cloud.</li>
+							<li><strong>You stay in control.</strong> Hide any player's cosmetics, turn off other players' cosmetics, or set how far away they are drawn.</li>
+						</ul>
+					</div>
+					<div class="stack">
+						<img class="shot" src="assets/img/report.webp" width="620" height="180" loading="lazy" alt="The report screen with a reason, an optional details field and a Send report button.">
+						<img class="shot" src="assets/img/notifications.webp" width="484" height="200" loading="lazy" alt="Orbit notifications: Connected to Orbit Cloud, and Reported Player83, thank you.">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="faq">
+			<div class="wrap">
+				<div class="section-head">
+					<h2>Questions</h2>
+				</div>
+				<div class="faq">
+					<details>
+						<summary>Do other players need the mod to see my cosmetics?</summary>
+						<p>Yes. Cosmetics are drawn by the Orbit mod, so only players who have it see them. Players without it play normally and are never sent anything.</p>
+					</details>
+					<details>
+						<summary>Does it work with Fresh Animations or other player model packs?</summary>
+						<p>Yes. By default cosmetics follow the animated model that is actually drawn, including Entity Model Features packs such as Fresh Animations. You can switch to the plain vanilla model in Settings.</p>
+					</details>
+					<details>
+						<summary>Does it work on servers that don't have Orbit?</summary>
+						<p>Yes, through Orbit Cloud, as long as you play with a real Minecraft account. With an offline account you can see other players' cosmetics, but yours aren't shared.</p>
+					</details>
+					<details>
+						<summary>What about singleplayer and LAN worlds?</summary>
+						<p>You always see your own cosmetics. When you open a world to LAN (or share it with e4mc or World Host), Orbit players who join see each other through Orbit Cloud.</p>
+					</details>
+					<details>
+						<summary>Is there a size limit for models?</summary>
+						<p>Yes, to keep everyone's game fast: by default 2 MiB per file, 6,144 faces, 8 textures up to 512×512 and 32 animations. Servers can set lower limits. The <a href="guide.html#limits">creator guide</a> lists them all.</p>
+					</details>
+					<details>
+						<summary>Which Minecraft versions are supported?</summary>
+						<p>Minecraft Java Edition 26.3 with Fabric Loader 0.20.1+ and Fabric API. The server plugin runs on Paper 26.3.</p>
+					</details>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="wrap">
+			<a class="logo" href="./"><span class="dot" aria-hidden="true"></span>Orbit</a>
+			<nav>
+				<a href="guide.html">Creator guide</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics">Source code</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics/releases">Releases</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics/issues">Report a bug</a>
+			</nav>
+			<p>Not affiliated with Mojang or Microsoft.</p>
+		</div>
+	</footer>
+
+	<script src="assets/site.js" defer></script>
+</body>
+</html>

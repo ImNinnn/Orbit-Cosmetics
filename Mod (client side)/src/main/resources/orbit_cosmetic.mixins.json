@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "dev.orbit.cosmetic.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"AvatarRendererMixin",
+		"InventoryScreenMixin",
+		"ModelPartAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

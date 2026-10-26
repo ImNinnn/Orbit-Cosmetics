@@ -1,0 +1,18 @@
+// Pure Java: no Minecraft, Fabric or Bukkit classes may be referenced from here.
+// Gson is provided at runtime by both Minecraft and Paper.
+dependencies {
+	compileOnly "com.google.code.gson:gson:${gson_version}"
+
+	testImplementation "com.google.code.gson:gson:${gson_version}"
+	testImplementation platform('org.junit:junit-bom:5.13.4')
+	testImplementation 'org.junit.jupiter:junit-jupiter'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events = ['failed']
+		exceptionFormat = 'full'
+	}
+}

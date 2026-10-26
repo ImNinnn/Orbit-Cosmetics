@@ -1,0 +1,12 @@
+# Cloudflare Tunnel configuration for the Orbit backend.
+# Copy to ~/.cloudflared/config.yml and replace TUNNEL_ID and YOUR_USER (see DEPLOYMENT.md, step 4).
+tunnel: TUNNEL_ID
+credentials-file: /home/YOUR_USER/.cloudflared/TUNNEL_ID.json
+
+ingress:
+  # The API. The backend only listens on this machine; the tunnel connects out to Cloudflare, so no port
+  # needs to be opened on the router or firewall.
+  - hostname: api.orbitcosmetics.qd.je
+    service: http://127.0.0.1:8000
+  # Everything else gets a 404 (the website will be hosted separately).
+  - service: http_status:404

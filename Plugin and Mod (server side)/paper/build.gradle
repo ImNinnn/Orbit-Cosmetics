@@ -1,0 +1,27 @@
+base {
+	archivesName = 'orbit-cosmetic-server-paper'
+}
+
+repositories {
+	maven {
+		name = 'PaperMC'
+		url = 'https://repo.papermc.io/repository/maven-public/'
+	}
+}
+
+dependencies {
+	compileOnly "io.papermc.paper:paper-api:${paper_api_version}"
+	implementation project(':common')
+}
+
+processResources {
+	def version = project.version
+	inputs.property 'version', version
+	filesMatching('plugin.yml') {
+		expand 'version': version
+	}
+}
+
+jar {
+	from(project(':common').sourceSets.main.output)
+}

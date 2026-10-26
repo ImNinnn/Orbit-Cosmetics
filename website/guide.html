@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Creator guide – Orbit Cosmetic</title>
+	<meta name="description" content="How to make Orbit cosmetics in Blockbench: body part groups, animations, movement physics, sharing settings and limits.">
+	<meta name="theme-color" content="#141416">
+	<link rel="canonical" href="https://orbitcosmetics.qd.je/guide.html">
+	<meta property="og:title" content="Orbit Cosmetic creator guide">
+	<meta property="og:description" content="Make your own Minecraft cosmetics in Blockbench.">
+	<meta property="og:image" content="https://orbitcosmetics.qd.je/assets/img/social.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon-32.png">
+	<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="wrap">
+			<a class="logo" href="./"><span class="dot" aria-hidden="true"></span>Orbit</a>
+			<button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+			<nav class="nav" id="nav">
+				<a href="./#features">Features</a>
+				<a href="./#start">Get started</a>
+				<a href="./#servers">Servers</a>
+				<a href="guide.html" aria-current="page">Creator guide</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics">GitHub</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="wrap doc">
+		<aside class="toc">
+			<p>On this page</p>
+			<a href="#template">Start from the template</a>
+			<a href="#parts">Body parts</a>
+			<a href="#animations">Animations</a>
+			<a href="#physics">Movement physics</a>
+			<a href="#sharing">Sharing your cosmetic</a>
+			<a href="#limits">Limits</a>
+			<a href="#tips">Tips</a>
+		</aside>
+
+		<article class="prose">
+			<p class="eyebrow">Creator guide</p>
+			<h1>Make a cosmetic</h1>
+			<p>Orbit cosmetics are ordinary <a href="https://www.blockbench.net/">Blockbench</a> models. If you can model in Blockbench, you can make one; no code, no resource packs.</p>
+
+			<h2 id="template">Start from the template</h2>
+			<ol>
+				<li>In game, press <kbd>O</kbd> to open the Cosmetic Manager and click <strong>Create</strong>.</li>
+				<li>Orbit writes <code>orbit/templates/orbit_template.bbmodel</code> and opens it in Blockbench.</li>
+				<li>Model inside the body part groups (below). The locked <code>REFERENCE_PLAYER</code> body shows where the player is; it is never drawn in game.</li>
+				<li>Save the finished model into the <code>orbit</code> folder itself (not <code>templates</code>), with textures embedded.</li>
+				<li>Click <strong>Reload</strong> in the manager, select your cosmetic and click <strong>Load</strong>.</li>
+			</ol>
+			<div class="note"><strong>Editing?</strong> Save in Blockbench, then click <strong>Reload</strong>. You don't need to restart the game.</div>
+
+			<h2 id="parts">Body parts</h2>
+			<p>Put geometry inside groups with these exact names (capital letters). Each one follows that part of the player, including when they nod, swing their arms or sneak.</p>
+			<div class="table-wrap">
+				<table>
+					<thead><tr><th>Group</th><th>Follows</th><th>Pivot in Blockbench</th></tr></thead>
+					<tbody>
+						<tr><td><code>HEAD</code></td><td>Head: where the player looks</td><td>0, 24, 0</td></tr>
+						<tr><td><code>BODY</code></td><td>Torso</td><td>0, 24, 0</td></tr>
+						<tr><td><code>RIGHT_ARM</code></td><td>Right arm</td><td>5, 22, 0</td></tr>
+						<tr><td><code>LEFT_ARM</code></td><td>Left arm</td><td>-5, 22, 0</td></tr>
+						<tr><td><code>RIGHT_LEG</code></td><td>Right leg</td><td>1.9, 12, 0</td></tr>
+						<tr><td><code>LEFT_LEG</code></td><td>Left leg</td><td>-1.9, 12, 0</td></tr>
+						<tr><td>anything else</td><td>The player's position and body turn only</td><td>0, 0, 0 (between the feet)</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Keep each group's origin on its pivot (the template already does) and what you see on the reference player in Blockbench is what you get in game. One pixel in Blockbench is one pixel on the player.</p>
+			<p>Not drawn in game: the <code>REFERENCE_PLAYER</code> group, anything with <strong>Export</strong> turned off, faces without a texture, locators and null objects.</p>
+
+			<h2 id="animations">Animations</h2>
+			<p>Make animations in Blockbench's Animate tab as usual: rotation, position and scale keyframes with linear, step, smooth or bezier curves, and Molang expressions. Then select the cosmetic in the manager and click <strong>Animations</strong>.</p>
+			<img class="shot" src="assets/img/animations.webp" width="960" height="244" loading="lazy" alt="Animation settings in game for a walk animation and a random animation.">
+			<div class="table-wrap">
+				<table>
+					<thead><tr><th>Setting</th><th>What it does</th></tr></thead>
+					<tbody>
+						<tr><td>Plays</td><td><em>Idle, Walk, Sprint, Jump, Fall, Sneak, Crouch, Swim, Fly</em>, <em>Always</em>, <em>Random</em> or <em>Never</em></td></tr>
+						<tr><td>Mode</td><td><em>Loop</em>; <em>Once</em> (then back to rest); <em>Hold</em> (stay on the last frame)</td></tr>
+						<tr><td>Min / max wait</td><td>For <em>Random</em>: the pause between plays, picked at random in this range (up to 120 s)</td></tr>
+						<tr><td>Speed</td><td>0.1× to 4×</td></tr>
+						<tr><td>Priority</td><td>When two animations move the same part, the higher one wins</td></tr>
+						<tr><td>Interrupt</td><td>While playing, pauses this cosmetic's lower-priority animations</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Name your animations <code>IDLE</code>, <code>WALK</code>, <code>SPRINT</code>, <code>JUMP</code>, <code>FALL</code>, <code>SNEAK</code>, <code>CROUCH</code>, <code>SWIM</code>, <code>FLY</code> or <code>RANDOM</code> (or <code>animation.hat.walk</code>, <code>run</code>, <code>fidget</code> and similar) and they are set up automatically.</p>
+
+			<h2 id="physics">Movement physics</h2>
+			<p>In the Animations screen, <strong>Advanced</strong> makes parts react to movement: a cape that lifts when running, a tail that swings when turning, ears that bounce when jumping. It works with or without animations.</p>
+			<img class="shot" src="assets/img/physics.webp" width="960" height="320" loading="lazy" alt="Physics settings for one part in game.">
+			<p>Click <strong>Add part…</strong>, choose a group from the tree of your model's parts, and set any of position X/Y/Z and rotation X/Y/Z (Blockbench axes):</p>
+			<div class="table-wrap">
+				<table>
+					<thead><tr><th>Setting</th><th>What it does</th></tr></thead>
+					<tbody>
+						<tr><td>Moves with</td><td><em>Forward</em> (backward is negative), <em>Sideways</em>, <em>Vertical</em>, <em>Any speed</em> or <em>Turning</em></td></tr>
+						<tr><td>Strength</td><td>Pixels or degrees per block per second of movement; negative reverses it</td></tr>
+						<tr><td>Maximum</td><td>The furthest it can move, in pixels or degrees</td></tr>
+						<tr><td>Resistance</td><td>0 reacts instantly; close to 1 reacts late and settles smoothly</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Up to 8 parts per cosmetic. A good start for a cape: rotation X, <em>Forward</em>, strength 8, maximum 40°, resistance 0.6.</p>
+
+			<h2 id="sharing">Sharing your cosmetic</h2>
+			<p>Your animation and physics settings are saved in a <code>.json</code> file with the same name as the model, for example <code>top_hat.bbmodel</code> and <code>top_hat.json</code>. Send both files and others get your cosmetic exactly as you set it up; dropping the model onto the manager brings the settings along.</p>
+			<p>Add your name and a description to that file; they show up in the manager:</p>
+			<pre><code>{
+  "orbitCosmetic": 1,
+  "model": "top_hat.bbmodel",
+  "name": "Top hat",
+  "author": "Your name",
+  "description": "A tall hat with a swinging brim.",
+  "animations": { ... },
+  "physics": { ... }
+}</code></pre>
+			<p>On a server, the cosmetics you wear are shared automatically with other Orbit players. You don't need to send files to anyone.</p>
+
+			<h2 id="limits">Limits</h2>
+			<p>To keep everyone's game fast, models are checked before they are used. The default limits:</p>
+			<div class="table-wrap">
+				<table>
+					<tbody>
+						<tr><td>File size</td><td>2 MiB (1 MiB to share through Orbit Cloud)</td></tr>
+						<tr><td>Cubes and meshes</td><td>1,024</td></tr>
+						<tr><td>Faces</td><td>6,144</td></tr>
+						<tr><td>Groups</td><td>256, nested up to 16 deep</td></tr>
+						<tr><td>Textures</td><td>8, each up to 512 × 512</td></tr>
+						<tr><td>Animations</td><td>32</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<p>Servers can set lower limits, and can choose which body parts are allowed. The manager tells you which limit a model goes over.</p>
+
+			<h2 id="tips">Tips</h2>
+			<ul>
+				<li>Embed textures when you save (in Blockbench's texture menu) so your model is one self-contained file.</li>
+				<li>Fewer, bigger cubes are faster than many tiny ones. Hidden faces can have their texture removed.</li>
+				<li>Slightly larger than the body (<em>inflate</em> 0.25–0.5) avoids flickering where the cosmetic touches the skin.</li>
+				<li>Animated multi-frame textures, sounds and particles in animations aren't supported; the manager warns you.</li>
+				<li>Want a starting point? <code>examples/orbit_demo.bbmodel</code> in the <a href="https://github.com/ImNinnn/Orbit-Cosmetics">repository</a> has something on every body part.</li>
+			</ul>
+		</article>
+	</main>
+
+	<footer class="site-footer">
+		<div class="wrap">
+			<a class="logo" href="./"><span class="dot" aria-hidden="true"></span>Orbit</a>
+			<nav>
+				<a href="./">Home</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics">Source code</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics/releases">Releases</a>
+				<a href="https://github.com/ImNinnn/Orbit-Cosmetics/issues">Report a bug</a>
+			</nav>
+			<p>Not affiliated with Mojang or Microsoft.</p>
+		</div>
+	</footer>
+
+	<script src="assets/site.js" defer></script>
+</body>
+</html>

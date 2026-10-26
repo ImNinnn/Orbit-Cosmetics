@@ -1,0 +1,12 @@
+name: OrbitCosmetic
+version: '${version}'
+main: dev.orbit.cosmetic.server.paper.OrbitPaperPlugin
+api-version: '26.3'
+description: Shares Orbit Cosmetic (Blockbench) cosmetics between players using the Orbit client mod.
+permissions:
+  orbit.use:
+    description: Allows wearing Orbit cosmetics that other players can see.
+    default: true
+  orbit.admin:
+    description: Allows using /orbit to manage Orbit Cosmetic.
+    default: op

@@ -1,0 +1,21 @@
+.gradle/
+build/
+*/build/
+**/build/
+run/
+out/
+.idea/
+*.iml
+.vscode/
+examples/__pycache__/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Secrets: never commit tokens or webhook URLs
+.env
+*.env
+!*.env.example

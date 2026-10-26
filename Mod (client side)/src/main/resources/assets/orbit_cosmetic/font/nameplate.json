@@ -1,0 +1,17 @@
+{
+	"providers": [
+		{
+			"type": "bitmap",
+			"file": "orbit_cosmetic:font/nameplate_icon.png",
+			"ascent": 7,
+			"height": 7,
+			"chars": [""]
+		},
+		{
+			"type": "space",
+			"advances": {
+				"": 1
+			}
+		}
+	]
+}
